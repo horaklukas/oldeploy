@@ -1,6 +1,6 @@
 {
   "name": "oldeploy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Old fashioned deploying tool",
   "main": "index.js",
   "scripts": {

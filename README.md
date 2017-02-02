@@ -6,9 +6,28 @@ Because i still need deploy some projects over (s)ftp as simple as possible.
 
 ## Need it, let's install
 
-```
-npm i -g git+ssh://github.com/horaklukas/oldeploy.git
-```
+There two options:
+
+* install it globally using one the commands below
+
+    `npm i -g horaklukas/oldeploy`
+
+    `npm i -g git+ssh://github.com/horaklukas/oldeploy.git`
+
+    and execute it with `oldeploy` command
+
+* or install it locally, using the same commands as above **but without `-g`** argument,
+then add script definition to similar to below into `package.json`
+
+    ```
+    {
+      "scripts": {
+        "deploy": "oldeploy"
+      }
+    }
+    ```
+  and execute it with `npm run deploy` command.
+
 
 ## How to use it
 
