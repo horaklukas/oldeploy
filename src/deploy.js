@@ -21,4 +21,4 @@ ftpDeploy.on('error', function (data) {
 
 module.exports = {
     deploy: deployAsync
-}
+};
