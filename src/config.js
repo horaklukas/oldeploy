@@ -32,7 +32,7 @@ exports.create = function() {
 					port: conf.port || 21,
 					localRoot: localRootPath,
 					remoteRoot: conf.remoteRoot,
-					exclude: []
+					exclude: conf.exclude || []
 				}
 			})
 			.catch(EnoentError, function() {

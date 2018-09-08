@@ -160,6 +160,18 @@ describe('Config', function() {
 
 			expect(config.create()).to.eventually.have.property('port', 69).notify(done);
 		});
+
+		it('should consume custom list of exclude patterns', function (done) {
+			const exclude = ['mydir/', '*.less'];
+			const parsedFtpConf = JSON.parse(validFtpConf),
+				modifiedFtpConf = JSON.stringify(Object.assign(parsedFtpConf, { exclude }));
+
+			mocks.fs.readFile.withArgs(authConfigFilePath).yields(null, validAuthConf);
+			mocks.fs.readFile.withArgs(ftpConfigFilePath).yields(null, modifiedFtpConf);
+			mocks.fs.stat.withArgs(localRootPath).yields(null, {isDirectory: sinon.stub().returns(true)});
+
+			expect(config.create()).to.eventually.have.property('exclude').that.eql(exclude).notify(done);
+		});
 	});
 
 	after(function () {

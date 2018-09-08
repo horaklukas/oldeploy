@@ -61,6 +61,8 @@ Two JSON configuration files (usually presented at project root) are required
     * These are optional:
 
       `port` - sftp connection port, default value is `21`.
+      
+      `exclude` - List of file patterns to exclude from deploying, eg. `['*.less', 'node_modules/']`.
 
   Example of how could `.ftpconfig` look like
 
